@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrimeWheels — Private Hire Service</title>
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+}
+
+h1, h2, h3 {
+  letter-spacing: 1px;
+}
+
+/* ---------- NAV BAR ---------- */
+nav {
+  background: #111;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px #4CAF50;
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  background: #FFD700;
+  color: black;
+  box-shadow: 0 0 15px #FFD700;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  background: url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 45px;
+  background: rgba(0,0,0,0.5);
+  padding: 15px 30px;
+  border-radius: 12px;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  background: #FFD700;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 15px;
+  box-shadow: 0 0 15px #FFD700;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #FFD700; }
+  50% { box-shadow: 0 0 25px #FFD700; }
+  100% { box-shadow: 0 0 10px #FFD700; }
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.cars {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.car-box {
+  width: 330px;
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #333;
+  transition: 0.3s;
+}
+
+.car-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #FFD700;
+}
+
+.car-box img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* CONTACT PAGE */
+.contact-box {
+  background: #111;
+  padding: 25px;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #FFD700;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV BAR -->
+<nav>
+  <div class="logo">PrimeWheels</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Service</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div>
+    <h1>Your Premium Private Car Hire<br>UAE – 24/7 Service</h1>
+    <a class="btn" href="https://wa.me/971501140447?text=Hi%20I%20want%20to%20book%20a%20ride%20with%20PrimeWheels">Book on WhatsApp</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <h2>Our Premium Vehicles</h2>
+
+  <div class="cars">
+    <div class="car-box">
+      <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Lexus">
+      <h3>Lexus LS430</h3>
+      <p>Executive class • Smooth ride • Luxury comfort</p>
+    </div>
+
+    <div class="car-box">
+      <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" alt="Camry">
+      <h3>Toyota Camry V6</h3>
+      <p>Powerful • Spacious • Perfect for city & long trips</p>
+    </div>
+
+    <div class="car-box">
+      <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Sedan">
+      <h3>Premium Sedan</h3>
+      <p>Clean • Comfortable • Affordable</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>About PrimeWheels</h2>
+  <p>
+    PrimeWheels is a private car hire service based in the UAE.  
+    We provide safe, clean, and reliable transport with premium vehicles  
+    and friendly service—available 24/7.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-box">
+    <p><strong>WhatsApp:</strong> +971 50 114 0447</p>
+    <p><strong>Service Area:</strong> All UAE</p>
+    <p><strong>Bookings:</strong> 24/7 Available</p>
+
+    <a class="btn" href="https://wa.me/971501140447">Message on WhatsApp</a>
+  </div>
+</section>
+
+</body>
+</html>
 
