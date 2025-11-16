@@ -1,281 +1,813 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PrimeWheels — Premium Private Hire UAE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeWheels — Private Hire UAE</title>
 
-<style>
-/* ---------- GENERAL ---------- */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #000;
-  color: white;
-  overflow-x: hidden;
-}
+  <!-- SIMPLE META -->
+  <meta name="description" content="PrimeWheels — private car hire in UAE. Lexus LS430 & Toyota Camry V6. Airport transfers, city rides, long trips, 24/7 service. Book on WhatsApp or call now." />
 
-h1, h2, h3 { letter-spacing: 1px; }
+  <!-- ICONS (FOR FOOTER & SMALL ICONS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1v9ZkA1q6kKQ5C5T9G5H3VfVvg0V8V4YfFQ6v1C6lY5x5G1sPZLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-/* ---------- GOLD PARTICLE ANIMATION ---------- */
-@keyframes sparkle {
-  0% { opacity: 0; transform: translateY(0px); }
-  50% { opacity: 1; transform: translateY(-15px); }
-  100% { opacity: 0; transform: translateY(0px); }
-}
+  <style>
+    /* ===== GLOBAL ===== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { letter-spacing: 0.5px; }
 
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #FFD700;
-  border-radius: 50%;
-  animation: sparkle 3s infinite ease-in-out;
-}
+    a { color: inherit; }
 
-/* ---------- NAVIGATION BAR ---------- */
-nav {
-  background: #111;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 0 15px #FFD700;
-  z-index: 50;
-}
+    /* ===== GOLD PARTICLE BACKGROUND ===== */
+    @keyframes sparkle {
+      0%   { opacity: 0; transform: translateY(0); }
+      50%  { opacity: 1; transform: translateY(-15px); }
+      100% { opacity: 0; transform: translateY(0); }
+    }
+    .particle {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 4s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.logo {
-  color: #FFD700;
-  font-size: 22px;
-  font-weight: bold;
-}
+    /* ===== NAVBAR ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(0,0,0,0.92);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 14px #ffd70055;
+      backdrop-filter: blur(8px);
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffd700;
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 12px #ffd700;
+    }
 
-/* Desktop Menu */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-}
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #111;
+      text-align: center;
+    }
+    .mobile-menu a {
+      padding: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+    }
+    .mobile-menu a:hover {
+      background: #ffd700;
+      color: #000;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 14px;
-  font-size: 15px;
-  border-radius: 8px;
-  transition: .3s;
-}
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 70vh;
+      background: url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=1600") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 18px;
+    }
+    .hero-content {
+      background: rgba(0,0,0,0.6);
+      padding: 20px 18px 26px;
+      border-radius: 14px;
+      animation: fadeIn 1.8s;
+      max-width: 600px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+    .hero-sub {
+      font-size: 14px;
+      opacity: 0.9;
+    }
 
-nav ul li a:hover {
-  background: #FFD700;
-  color: black;
-  box-shadow: 0 0 12px #FFD700;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
 
-/* Mobile hamburger */
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      margin: 10px 6px 0;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 12px #ffd700;
+      animation: glow 2s infinite;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #ffd700;
+      border: 1px solid #ffd700;
+      box-shadow: 0 0 10px #ffd70055;
+      animation: none;
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 8px #ffd700; }
+      50%      { box-shadow: 0 0 20px #ffd700; }
+    }
 
-/* Mobile Menu */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: #111;
-  text-align: center;
-  padding: 15px 0;
-}
+    /* ===== GENERAL SECTIONS ===== */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 40px 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
 
-.mobile-menu a {
-  color: white;
-  padding: 12px;
-  text-decoration: none;
-  display: block;
-}
+    /* ===== SLIDER ===== */
+    .slider {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 20px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 18px #ffd70088;
+    }
+    .slider img {
+      width: 100%;
+      display: block;
+    }
+    .car-caption {
+      font-size: 13px;
+      margin-top: 6px;
+      text-align: center;
+      opacity: 0.9;
+    }
 
-.mobile-menu a:hover {
-  background: #FFD700;
-  color: black;
-}
+    /* ===== CAR CARDS & SPECS ===== */
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .car-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 0 12px #222;
+      transition: 0.3s;
+    }
+    .car-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 16px #ffd70055;
+    }
+    .car-card h3 {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      color: #ffd700;
+      font-size: 18px;
+    }
+    .car-card small {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+    details.specs {
+      margin-top: 8px;
+      background: #000;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    details.specs[open] {
+      box-shadow: 0 0 14px #ffd70066;
+      transform: translateY(-2px);
+    }
+    details.specs summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    details.specs summary::-webkit-details-marker { display: none; }
+    .spec-list {
+      margin: 8px 0 0;
+      padding-left: 16px;
+      font-size: 12px;
+      text-align: left;
+    }
 
-/* ---------- HERO SECTION ---------- */
-.hero {
-  height: 70vh;
-  background: url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+    /* ===== PRICING ===== */
+    .pricing-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .price-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 0 12px #222;
+      font-size: 13px;
+    }
+    .price-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #ffd700;
+      font-size: 18px;
+    }
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .price-table th,
+    .price-table td {
+      border-bottom: 1px solid #222;
+      padding: 6px 4px;
+      text-align: left;
+    }
+    .price-table th {
+      color: #ffd700;
+      font-weight: 600;
+    }
 
-.hero h1 {
-  background: rgba(0,0,0,0.5);
-  padding: 15px;
-  font-size: 36px;
-  border-radius: 12px;
-  animation: fadeIn 2s;
-}
+    /* ===== ABOUT & TEXT BLOCKS ===== */
+    .text-block {
+      background: #111;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 0 12px #222;
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
+    /* ===== BOOKING FORM ===== */
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 18px;
+    }
+    .booking-card,
+    .contact-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 0 14px #222;
+      font-size: 13px;
+    }
+    .booking-card h3,
+    .contact-card h3 {
+      margin-top: 0;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #000;
+      color: #fff;
+      font-size: 12px;
+    }
+    textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
 
-/* ---------- BUTTON ---------- */
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  background: #FFD700;
-  color: black;
-  font-weight: bold;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 15px;
-  box-shadow: 0 0 15px #FFD700;
-  animation: glow 2s infinite;
-  font-size: 16px;
-}
+    /* ===== QR + MAPS ===== */
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .qr-box {
+      background: #111;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 0 12px #222;
+    }
+    .qr-box img {
+      width: 160px;
+      height: 160px;
+      border-radius: 8px;
+      background: #fff;
+    }
 
-@keyframes glow {
-  0%,100% { box-shadow: 0 0 10px #FFD700; }
-  50% { box-shadow: 0 0 25px #FFD700; }
-}
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 30px;
+      padding: 18px 12px 26px;
+      background: #050505;
+      border-top: 1px solid #222;
+      font-size: 12px;
+      text-align: center;
+    }
+    .footer-icons {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      font-size: 18px;
+    }
+    .footer-icons a {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ffd70055;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+    .footer-icons a:hover {
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 12px #ffd700;
+    }
 
-/* ---------- SECTIONS ---------- */
-.section {
-  padding: 45px 20px;
-  text-align: center;
-}
-
-/* ---------- AUTO SLIDER ---------- */
-.slider {
-  width: 95%;
-  max-width: 450px;
-  margin: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 20px #FFD700;
-}
-
-.slider img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* ---------- MOBILE FIX ---------- */
-@media (max-width: 700px) {
-  nav ul { display: none; }
-  .menu-btn { display: block; color: white; }
-  .hero h1 { font-size: 26px; }
-}
-</style>
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 760px) {
+      nav ul { display: none; }
+      .menu-btn { display: block; color: #fff; }
+      .hero { min-height: 65vh; }
+      .hero h1 { font-size: 24px; }
+      .hero-sub { font-size: 12px; }
+      .booking-layout { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- GOLD PARTICLES (10 particles) -->
+<!-- GOLD PARTICLES -->
 <script>
-for(let i = 0; i < 10; i++){
-  let p = document.createElement("div");
-  p.className = "particle";
-  p.style.left = Math.random()*100 + "vw";
-  p.style.top = Math.random()*100 + "vh";
-  p.style.animationDelay = (Math.random()*3)+"s";
-  document.body.appendChild(p);
-}
+  for (let i = 0; i < 16; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.top = Math.random() * 100 + 'vh';
+    p.style.animationDelay = (Math.random() * 4) + 's';
+    document.body.appendChild(p);
+  }
 </script>
 
-<!-- NAVIGATION -->
+<!-- NAVBAR -->
 <nav>
-  <div class="logo">PrimeWheels</div>
+  <div class="nav-left">
+    <!-- TODO: replace logo.png with your real logo file / URL -->
+    <img src="logo.png" alt="PrimeWheels Logo" class="logo-img" onerror="this.style.display='none';">
+    <div class="logo-text">PrimeWheels</div>
+  </div>
 
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#services">Service</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a>
-  <a href="#services">Service</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#services" onclick="toggleMenu()">Service</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
 
 <script>
-function toggleMenu() {
-  let menu = document.getElementById("mobileMenu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
 </script>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div>
-    <h1>Luxury Private Car Hire<br>Across UAE</h1>
-    <a class="btn" href="https://wa.me/971501140447">Book on WhatsApp</a>
+  <div class="hero-content">
+    <h1>Luxury Private Hire in UAE</h1>
+    <p class="hero-sub">
+      Lexus LS430 (2001) &amp; Toyota Camry V6 (2004) — clean, comfy and always on time.
+      Based in Umm Al Quwain, serving all Emirates 24/7.
+    </p>
+    <div>
+      <a class="btn" href="https://wa.me/971501140447?text=Hi%20PrimeWheels%2C%20I%20want%20to%20book%20a%20ride.">Book on WhatsApp</a>
+      <a class="btn btn-secondary" href="tel:+971501140447">Call Now</a>
+    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES / CARS -->
 <section class="section" id="services">
-  <h2>Our Premium Vehicles</h2>
+  <h2>Our Fleet</h2>
+  <p class="section-sub">Choose your ride — classic Lexus comfort or reliable Toyota Camry V6.</p>
 
-  <!-- Auto Slider -->
+  <!-- Slider with cars (generic silver sedans – replace URLs with your photos when ready) -->
   <div class="slider">
-    <img id="slideImg" src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg">
+    <img id="slideImg" src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="PrimeWheels car" />
+  </div>
+  <div class="car-caption" id="sliderCaption">
+    Lexus LS430 · Silver · 2001 — Representative image
   </div>
 
   <script>
-  let images = [
-    "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg",
-    "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg",
-    "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg"
-  ];
-  let index = 0;
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    document.getElementById("slideImg").src = images[index];
-  }, 2500);
+    const sliderImages = [
+      {
+        url: "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        caption: "Lexus LS430 · Silver · 2001 — Representative image"
+      },
+      {
+        url: "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        caption: "Toyota Camry V6 · Silver · 2004 — Representative image"
+      }
+    ];
+    let sliderIndex = 0;
+    setInterval(() => {
+      sliderIndex = (sliderIndex + 1) % sliderImages.length;
+      document.getElementById('slideImg').src = sliderImages[sliderIndex].url;
+      document.getElementById('sliderCaption').innerText = sliderImages[sliderIndex].caption;
+    }, 2600);
   </script>
+
+  <!-- Car cards with specs -->
+  <div class="cars-grid">
+    <!-- Lexus -->
+    <div class="car-card">
+      <h3>Lexus LS430</h3>
+      <small>2001 · V8 · Silver · Executive Class</small>
+      <p style="margin-top:8px;">
+        Perfect for airport runs, business meetings and long-distance travel.
+        Ultra-smooth, quiet cabin and full-size rear comfort.
+      </p>
+      <details class="specs">
+        <summary>
+          <span>View specs</span>
+          <span><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <ul class="spec-list">
+          <li>Engine: 4.3L V8 (petrol)</li>
+          <li>Seats: 4–5 adults with large legroom</li>
+          <li>Comfort: Leather interior, soft suspension, dual A/C</li>
+          <li>Best for: VIP, airport transfers, long trips, special events</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Camry -->
+    <div class="car-card">
+      <h3>Toyota Camry V6</h3>
+      <small>2004 · V6 · Silver · Business / Family</small>
+      <p style="margin-top:8px;">
+        Reliable Japanese sedan with strong V6 power. Ideal for daily rides,
+        inter-emirate trips and family travel.
+      </p>
+      <details class="specs">
+        <summary>
+          <span>View specs</span>
+          <span><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <ul class="spec-list">
+          <li>Engine: 3.0L V6 (petrol)</li>
+          <li>Seats: 4–5 passengers</li>
+          <li>Comfort: Dual A/C, soft seats, quiet ride</li>
+          <li>Best for: City trips, office rides, shopping, daily use</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Generic premium sedan placeholder -->
+    <div class="car-card">
+      <h3>Premium Sedan</h3>
+      <small>Clean · Fully insured · Non-smoking</small>
+      <p style="margin-top:8px;">
+        All vehicles are maintained on time, fully insured and kept neat inside and out,
+        so every ride feels like a fresh car.
+      </p>
+      <details class="specs">
+        <summary>
+          <span>Service highlights</span>
+          <span><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <ul class="spec-list">
+          <li>Daily cleaning & regular disinfection</li>
+          <li>Professional, polite, non-smoking driver</li>
+          <li>Phone chargers & AUX/Bluetooth on request</li>
+          <li>Free short waiting time at pickup</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <h2>Pricing</h2>
+  <p class="section-sub">
+    Simple, transparent fares for PrimeWheels. No hidden surprises.
+  </p>
+
+  <div class="pricing-wrapper">
+    <!-- Your PrimeWheels rates -->
+    <div class="price-card">
+      <h3>PrimeWheels Standard Rates</h3>
+      <table class="price-table">
+        <tr><th>Service</th><th>Rate</th></tr>
+        <tr><td>Distance</td><td><strong>1.1 AED</strong> per km</td></tr>
+        <tr><td>Hourly hire</td><td><strong>40 AED</strong> per hour</td></tr>
+        <tr><td>Airport transfers</td><td>From <strong>60 AED</strong> (Sharjah &amp; others, depending on distance)</td></tr>
+        <tr><td>Minimum trip</td><td>As per agreement before trip</td></tr>
+        <tr><td>Waiting time</td><td>Friendly, flexible — discussed with customer</td></tr>
+      </table>
+      <p style="margin-top:10px; font-size:12px; opacity:0.8;">
+        Final price is always confirmed with you before the ride starts.
+      </p>
+    </div>
+
+    <!-- Reference government taxi style fares -->
+    <div class="price-card">
+      <h3>Reference UAE Taxi Meter Fares*</h3>
+      <table class="price-table">
+        <tr><th>Item</th><th>Typical Value</th></tr>
+        <tr><td>Day flag fall</td><td>~4–5 AED</td></tr>
+        <tr><td>Night flag fall</td><td>~5–5.5 AED</td></tr>
+        <tr><td>Per km</td><td>~1.8–2.0 AED</td></tr>
+        <tr><td>Waiting time</td><td>~0.50 AED per minute after first few minutes</td></tr>
+        <tr><td>Minimum fare</td><td>~6–12 AED</td></tr>
+      </table>
+      <p style="margin-top:8px; font-size:11px; opacity:0.7;">
+        *Based on published fare charts from UAE transport authorities
+        (RAK / Abu Dhabi style). Actual government taxi fares in Umm Al
+        Quwain may vary slightly but follow a similar structure.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section class="section" id="about">
   <h2>About PrimeWheels</h2>
-  <p>
-    Premium private hire car service available 24/7 across UAE.  
-    Lexus, Camry, and premium sedans for airport, city rides, long trips  
-    and business transport. Clean, safe, and reliable.
-  </p>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <h2>Contact Us</h2>
-
-  <div class="contact-box" style="background:#111; padding:22px; border-radius:12px; max-width:420px; margin:auto; box-shadow:0 0 20px #FFD700;">
-    <p><strong>WhatsApp:</strong> +971 50 114 0447</p>
-    <p><strong>Service Area:</strong> UAE</p>
-    <p><strong>Availability:</strong> 24/7</p>
-
-    <a class="btn" href="https://wa.me/971501140447">Message on WhatsApp</a>
+  <div class="text-block">
+    <p>
+      PrimeWheels is a private hire service based in <strong>Umm Al Quwain</strong>, covering
+      all Emirates — Dubai, Sharjah, Ajman, RAK, Abu Dhabi and more.
+    </p>
+    <p>
+      The idea is simple: give customers the comfort of a private car with
+      the honesty of a meter taxi. Clean cars, clear prices, and a driver
+      who respects your time. No rush, no attitude — just smooth, relaxed
+      trips.
+    </p>
+    <p>
+      Whether you need an early-morning airport drop, daily office rides,
+      school pickups, family shopping runs or long-distance travel, PrimeWheels
+      can handle it with the same car and the same friendly driver you trust.
+    </p>
+    <p><strong>Slogan:</strong> Always On Time, Always Prime.</p>
   </div>
 </section>
 
+<!-- CONTACT & BOOKING FORM -->
+<section class="section" id="contact">
+  <h2>Book Your Ride</h2>
+  <p class="section-sub">
+    Fill the form and it will open WhatsApp with all details typed for you.
+  </p>
+
+  <div class="booking-layout">
+    <!-- FORM -->
+    <div class="booking-card">
+      <h3>Quick Booking Form</h3>
+      <form onsubmit="sendWhatsApp(event)">
+        <div class="form-row">
+          <div>
+            <label for="name">Your Name</label>
+            <input id="name" placeholder="Customer name" required />
+          </div>
+          <div>
+            <label for="phone">Contact Number</label>
+            <input id="phone" placeholder="Optional" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="pickup">Pick-up Location</label>
+            <input id="pickup" placeholder="Umm Al Quwain / Dubai / etc." required />
+          </div>
+          <div>
+            <label for="drop">Drop-off Location</label>
+            <input id="drop" placeholder="Destination" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="date">Date</label>
+            <input id="date" type="date" />
+          </div>
+          <div>
+            <label for="time">Time</label>
+            <input id="time" type="time" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="car">Preferred Car</label>
+            <select id="car">
+              <option value="Any">Any available</option>
+              <option value="Lexus LS430">Lexus LS430 (2001)</option>
+              <option value="Toyota Camry V6">Toyota Camry V6 (2004)</option>
+            </select>
+          </div>
+          <div>
+            <label for="passengers">Passengers</label>
+            <input id="passengers" type="number" min="1" max="5" placeholder="1–5" />
+          </div>
+        </div>
+
+        <label for="notes">Extra Notes</label>
+        <textarea id="notes" placeholder="Flight number, luggage, baby seat, special request…"></textarea>
+
+        <div style="margin-top:16px;">
+          <button type="submit" class="btn">Send to WhatsApp</button>
+          <a href="https://wa.me/971501140447?text=Hi%20PrimeWheels%2C%20I%20need%20a%20ride." class="btn btn-secondary">Chat only</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- CONTACT INFO / MAPS / QR -->
+    <div class="contact-card">
+      <h3>Contact & Quick Actions</h3>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/971501140447">+971 50 114 0447</a></p>
+      <p><strong>Call:</strong> <a href="tel:+971501140447">+971 50 114 0447</a></p>
+      <p><strong>Base:</strong> Umm Al Quwain, UAE — trips to all Emirates</p>
+
+      <div style="margin-top:12px;">
+        <a class="btn btn-secondary" href="https://www.google.com/maps" target="_blank">
+          Open Google Maps
+        </a>
+        <p style="font-size:11px; opacity:0.8; margin-top:6px;">
+          Tap to open Google Maps, choose your route, then share the location/route directly to WhatsApp.
+        </p>
+      </div>
+
+      <div class="qr-grid">
+        <div class="qr-box">
+          <p><strong>WhatsApp Booking QR</strong></p>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwa.me%2F971501140447" alt="WhatsApp QR">
+          <p>Scan to open chat with PrimeWheels.</p>
+        </div>
+        <div class="qr-box">
+          <p><strong>Website QR</strong></p>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fprimewheels.github.io%2FPrimeWheels%2F" alt="Website QR">
+          <p>Scan to open this website.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-icons">
+    <a href="https://wa.me/971501140447" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+971501140447" title="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://www.google.com/maps" title="Location"><i class="fas fa-location-dot"></i></a>
+  </div>
+  <div>
+    © <span id="year"></span> PrimeWheels — Always On Time, Always Prime.
+  </div>
+</footer>
+
+<script>
+  // footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // WhatsApp booking from form
+  function sendWhatsApp(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const pickup = document.getElementById('pickup').value.trim();
+    const drop = document.getElementById('drop').value.trim();
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const car = document.getElementById('car').value;
+    const pax = document.getElementById('passengers').value;
+    const notes = document.getElementById('notes').value.trim();
+
+    let msg = "New PrimeWheels Booking%0A";
+    msg += "------------------------%0A";
+    msg += "Name: " + name + "%0A";
+    if (phone) msg += "Contact Number: " + phone + "%0A";
+    msg += "Pick-up: " + pickup + "%0A";
+    msg += "Drop-off: " + drop + "%0A";
+    if (date) msg += "Date: " + date + "%0A";
+    if (time) msg += "Time: " + time + "%0A";
+    msg += "Preferred Car: " + car + "%0A";
+    if (pax) msg += "Passengers: " + pax + "%0A";
+    if (notes) msg += "Notes: " + notes + "%0A";
+
+    const url = "https://wa.me/971501140447?text=" + msg;
+    window.location.href = url;
+  }
+</script>
+
 </body>
 </html>
+
 
 
