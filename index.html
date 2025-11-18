@@ -5,10 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Prime Wheels — Private Hire | Umm Al Quwain, UAE</title>
+  <title>Prime Wheels — Taxi & Private Hire in Umm Al Quwain | Lexus & Camry</title>
 
-  <meta name="description" content="Prime Wheels — Luxury private hire service in Umm Al Quwain, UAE. Lexus LS430 & Toyota Camry V6. Always On Time, Always Prime. Book instantly on WhatsApp.">
-  <meta name="keywords" content="Prime Wheels, Umm Al Quwain taxi, private hire UAQ, Lexus LS430, Camry V6, airport transfer UAQ, UAE ride">
+  <meta name="title" content="Prime Wheels — Taxi & Private Hire in Umm Al Quwain | Lexus & Camry">
+  <meta name="description" content="Prime Wheels offers safe, clean and affordable private hire taxi service in Umm Al Quwain. Lexus LS430 & Toyota Camry V6 (silver). Airport transfers, Dubai & Sharjah rides. Always On Time, Always Prime. Book via WhatsApp.">
+  <meta name="keywords" content="Umm Al Quwain taxi, UAQ taxi, taxi service UAQ, private hire UAE, Prime Wheels UAQ, Lexus taxi UAE, Camry taxi UAE, airport taxi UAQ, UAQ to Dubai taxi, UAQ to Sharjah taxi, UAQ private driver">
   <meta name="author" content="Prime Wheels UAE">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#050608" />
@@ -16,42 +17,103 @@
   <!-- CANONICAL -->
   <link rel="canonical" href="https://primewheels.github.io/PrimeWheels/">
 
+  <!-- FAVICON (optional, uses logo) -->
+  <link rel="icon" type="image/png" href="images/primewheels-logo.png">
+
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Prime Wheels — Private Hire | Umm Al Quwain, UAE">
-  <meta property="og:description" content="Luxury private hire with Lexus & Camry. Always On Time, Always Prime. Book your ride on WhatsApp now.">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prime Wheels — Private Hire | Umm Al Quwain UAE">
+  <meta property="og:description" content="Safe and affordable private hire with Lexus LS430 & Toyota Camry V6. Airport pick-up, city rides, Dubai/Sharjah transfers. Book now via WhatsApp.">
+  <meta property="og:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png">
   <meta property="og:url" content="https://primewheels.github.io/PrimeWheels/">
-  <!-- TODO: change this image path to your real banner -->
-  <meta property="og:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-banner.jpg">
+  <meta property="og:type" content="website">
 
   <!-- TWITTER CARD -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prime Wheels — Private Hire | Umm Al Quwain, UAE">
-  <meta name="twitter:description" content="Premium rides in Umm Al Quwain. Always On Time, Always Prime.">
-  <meta name="twitter:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-banner.jpg">
+  <meta name="twitter:title" content="Prime Wheels — Private Hire UAQ">
+  <meta name="twitter:description" content="Fast, clean, affordable taxi in Umm Al Quwain. Lexus LS430, Toyota Camry V6. WhatsApp booking available.">
+  <meta name="twitter:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png">
 
-  <!-- LOCAL BUSINESS SCHEMA -->
+  <!-- Language / Region -->
+  <link rel="alternate" href="https://primewheels.github.io/PrimeWheels/" hreflang="en-ae" />
+
+  <!-- LOCAL BUSINESS / TAXI SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "TaxiService",
     "name": "Prime Wheels",
-    "image": "https://primewheels.github.io/PrimeWheels/images/primewheels-banner.jpg",
+    "image": "https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png",
+    "@id": "https://primewheels.github.io/PrimeWheels/",
     "url": "https://primewheels.github.io/PrimeWheels/",
     "telephone": "+971501140447",
     "priceRange": "AED",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Umm Al Quwain City",
       "addressLocality": "Umm Al Quwain",
       "addressRegion": "UAQ",
+      "postalCode": "00000",
       "addressCountry": "AE"
     },
-    "areaServed": "Umm Al Quwain, Dubai, Sharjah, Ajman, Ras Al Khaimah",
-    "description": "Luxury private hire service based in Umm Al Quwain, UAE. Lexus LS430 & Toyota Camry V6. Always On Time, Always Prime."
+    "areaServed": ["Umm Al Quwain","Dubai","Sharjah","Ajman","Ras Al Khaimah"],
+    "description": "Private hire taxi service in Umm Al Quwain offering Lexus LS430 and Toyota Camry rides. Airport pick-ups, city trips and long-distance travel across the UAE.",
+    "serviceType": "Taxi, Private Hire, Airport Transfer",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Taxi Pricing",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Standard per km",
+          "price": "1.10",
+          "priceCurrency": "AED"
+        },
+        {
+          "@type": "Offer",
+          "name": "Waiting time per hour",
+          "price": "40",
+          "priceCurrency": "AED"
+        }
+      ]
+    }
   }
   </script>
 
-  <!-- FONT (OPTIONAL) -->
+  <!-- FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do you provide taxi service in Umm Al Quwain?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Prime Wheels operates 24/7 taxi and private hire service in and around Umm Al Quwain, with advance booking."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much is the per kilometer rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Our standard rate is AED 1.10 per km with AED 40 per hour waiting time. You will always know the fare before the trip starts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I book a taxi by WhatsApp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. You can instantly book a ride on WhatsApp using +971501140447. Send your pickup, drop location and time."
+     }
+    }
+   ]
+  }
+  </script>
+
+  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -65,17 +127,12 @@
       --text: #f5f5f5;
       --muted: #a3a3a3;
       --accent: #facc15;
-      --danger: #ef4444;
       --radius-lg: 18px;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
       --border-soft: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -85,24 +142,12 @@
       scroll-behavior: smooth;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 1.2rem; }
 
-    /* --------- LAYOUT --------- */
-
-    .container {
-      width: 100%;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1.2rem;
-    }
+    /* HEADER */
 
     header {
       position: sticky;
@@ -117,7 +162,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.7rem 0.2rem;
+      padding: 0.6rem 0.2rem;
       gap: 1rem;
     }
 
@@ -127,29 +172,23 @@
       gap: 0.6rem;
     }
 
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: radial-gradient(circle at 30% 0, #fde68a, #78350f);
-      box-shadow: 0 0 18px rgba(250, 204, 21, 0.65);
-    }
-
-    .logo-circle span {
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
     }
 
     .nav-title {
       font-size: 1.05rem;
       font-weight: 600;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-subtitle {
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -177,9 +216,7 @@
       transition: width 0.25s ease;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after { width: 100%; }
 
     .nav-actions {
       display: flex;
@@ -253,13 +290,8 @@
       background: #e5e7eb;
     }
 
-    .nav-toggle span::before {
-      top: -5px;
-    }
-
-    .nav-toggle span::after {
-      top: 5px;
-    }
+    .nav-toggle span::before { top: -5px; }
+    .nav-toggle span::after { top: 5px; }
 
     .nav-links-mobile {
       display: none;
@@ -271,15 +303,11 @@
       letter-spacing: 0.08em;
     }
 
-    .nav-links-mobile a {
-      padding: 0.4rem 0.2rem;
-    }
+    .nav-links-mobile a { padding: 0.4rem 0.2rem; }
 
-    /* ------- HERO ------- */
+    /* HERO */
 
-    .hero {
-      padding: 1.5rem 0 2.5rem;
-    }
+    .hero { padding: 1.5rem 0 2.5rem; }
 
     .hero-grid {
       display: grid;
@@ -348,10 +376,7 @@
       margin-bottom: 0.9rem;
     }
 
-    .hero-sub strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
+    .hero-sub strong { color: #e5e7eb; font-weight: 500; }
 
     .hero-cta-row {
       display: flex;
@@ -368,18 +393,8 @@
       flex-wrap: wrap;
     }
 
-    .hero-mini span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .mini-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
+    .hero-mini span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .mini-dot { width: 8px; height: 8px; border-radius: 999px; background: #22c55e; }
 
     .hero-car-card {
       margin-top: 1.1rem;
@@ -394,19 +409,7 @@
       overflow: hidden;
     }
 
-    .hero-car-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.45), transparent 65%);
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .hero-car-left {
-      position: relative;
-      z-index: 1;
-    }
+    .hero-car-left { position: relative; z-index: 1; }
 
     .hero-car-left h3 {
       font-size: 0.9rem;
@@ -422,12 +425,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .hero-spec-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.72rem;
-    }
+    .hero-spec-row { display: flex; flex-wrap: wrap; gap: 0.4rem; font-size: 0.72rem; }
 
     .hero-spec-pill {
       border-radius: 999px;
@@ -436,69 +434,33 @@
       background: rgba(6, 95, 70, 0.9);
     }
 
-    .hero-car-right {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-    }
+    .hero-car-right { position: relative; z-index: 1; }
 
-    .car-silhouette {
-      width: 135px;
-      height: 72px;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      background:
-        radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 0.8), transparent 58%),
-        radial-gradient(circle at 75% 10%, rgba(148, 163, 184, 0.95), transparent 60%),
-        linear-gradient(135deg, #4b5563, #9ca3af);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 22px 35px rgba(0, 0, 0, 0.85);
-      position: relative;
+    .hero-car-slider {
+      border-radius: 18px;
       overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at top, rgba(15,23,42,0.9), rgba(3,7,18,0.98));
     }
 
-    .car-silhouette::before,
-    .car-silhouette::after {
-      content: "";
-      position: absolute;
-      bottom: -9px;
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.9) inset;
-      background: radial-gradient(circle at 30% 20%, #e5e7eb, #111827);
+    .hero-car-slider img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
     }
 
-    .car-silhouette::before {
-      left: 12px;
+    .hero-car-caption {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.5rem 0.45rem;
+      text-align: center;
+      color: #e5e7eb;
     }
 
-    .car-silhouette::after {
-      right: 12px;
-    }
+    /* SECTIONS */
 
-    .car-glow {
-      position: absolute;
-      inset: auto 5px -8px;
-      height: 20px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.7), transparent 70%);
-      opacity: 0.75;
-      filter: blur(6px);
-    }
-
-    /* ------- FLEET ------- */
-
-    section {
-      padding: 1.6rem 0 2rem;
-    }
-
-    section:nth-of-type(odd) {
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), transparent);
-    }
+    section { padding: 1.6rem 0 2rem; }
+    section:nth-of-type(odd) { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), transparent); }
 
     .section-heading {
       display: flex;
@@ -514,10 +476,7 @@
       text-transform: uppercase;
     }
 
-    .section-tagline {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    .section-tagline { font-size: 0.8rem; color: var(--muted); }
 
     .fleet-grid {
       display: grid;
@@ -544,10 +503,7 @@
       pointer-events: none;
     }
 
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
+    .card-inner { position: relative; z-index: 1; }
 
     .card-label {
       font-size: 0.72rem;
@@ -565,10 +521,7 @@
       margin-bottom: 0.3rem;
     }
 
-    .card-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
+    .card-title { font-size: 1rem; font-weight: 600; }
 
     .card-badge {
       font-size: 0.7rem;
@@ -580,11 +533,7 @@
       letter-spacing: 0.08em;
     }
 
-    .card-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
+    .card-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; }
 
     .spec-grid {
       display: grid;
@@ -593,14 +542,8 @@
       font-size: 0.75rem;
     }
 
-    .spec-label {
-      color: var(--muted);
-      font-size: 0.7rem;
-    }
-
-    .spec-value {
-      font-size: 0.8rem;
-    }
+    .spec-label { color: var(--muted); font-size: 0.7rem; }
+    .spec-value { font-size: 0.8rem; }
 
     .fleet-footer {
       display: flex;
@@ -654,7 +597,7 @@
       font-weight: 500;
     }
 
-    /* ------- FARES ------- */
+    /* FARES */
 
     .fares-layout {
       display: grid;
@@ -683,15 +626,8 @@
       color: var(--muted);
     }
 
-    .fare-highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .fare-note {
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .fare-highlight { color: var(--accent); font-weight: 600; }
+    .fare-note { font-size: 0.72rem; color: var(--muted); }
 
     .fare-chip-row {
       display: flex;
@@ -708,7 +644,7 @@
       background: rgba(15, 23, 42, 0.9);
     }
 
-    /* ------- WHY US ------- */
+    /* WHY US */
 
     .why-grid {
       display: grid;
@@ -730,7 +666,7 @@
       background: rgba(15, 23, 42, 0.9);
     }
 
-    /* ------- BOOKING ------- */
+    /* BOOKING */
 
     .booking-grid {
       display: grid;
@@ -776,10 +712,7 @@
       background: rgba(15, 23, 42, 1);
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 72px;
-    }
+    textarea { resize: vertical; min-height: 72px; }
 
     .form-row-2 {
       display: grid;
@@ -793,10 +726,7 @@
       margin-top: 0.45rem;
     }
 
-    .booking-help strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
+    .booking-help strong { color: #e5e7eb; font-weight: 500; }
 
     .maps-card {
       border-radius: var(--radius-lg);
@@ -807,15 +737,8 @@
       font-size: 0.8rem;
     }
 
-    .maps-card h3 {
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .maps-card p {
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
+    .maps-card h3 { font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .maps-card p { color: var(--muted); margin-bottom: 0.5rem; }
 
     .maps-links {
       display: flex;
@@ -831,7 +754,7 @@
       background: rgba(15, 23, 42, 0.95);
     }
 
-    /* ------- FOOTER ------- */
+    /* FOOTER */
 
     footer {
       border-top: var(--border-soft);
@@ -853,22 +776,12 @@
       gap: 0.4rem;
     }
 
-    .footer-main span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+    .footer-main span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .footer-main strong { color: #e5e7eb; }
 
-    .footer-main strong {
-      color: #e5e7eb;
-    }
+    .footer-copy { font-size: 0.7rem; color: #4b5563; }
 
-    .footer-copy {
-      font-size: 0.7rem;
-      color: #4b5563;
-    }
-
-    /* ------- UTILITIES ------- */
+    /* UTILITIES */
 
     .badge-soft {
       display: inline-flex;
@@ -893,48 +806,24 @@
       transform: translateY(0);
     }
 
-    /* ------- MEDIA QUERIES ------- */
+    /* MEDIA QUERIES */
 
     @media (min-width: 640px) {
-      .hero {
-        padding-top: 2rem;
-      }
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
-      }
-      .fares-layout {
-        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
-      }
-      .why-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .booking-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-      }
-      .fleet-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .hero { padding-top: 2rem; }
+      .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr); }
+      .fares-layout { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); }
+      .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .booking-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr); }
+      .fleet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-      .nav-toggle {
-        display: none;
-      }
-      .nav-links-mobile {
-        display: none !important;
-      }
-      .hero-title {
-        font-size: 2.1rem;
-      }
-      .hero-main {
-        padding: 1.6rem 1.6rem 1.8rem;
-      }
-      section {
-        padding: 2rem 0 2.4rem;
-      }
+      .nav-links { display: flex; }
+      .nav-toggle { display: none; }
+      .nav-links-mobile { display: none !important; }
+      .hero-title { font-size: 2.1rem; }
+      .hero-main { padding: 1.6rem 1.6rem 1.8rem; }
+      section { padding: 2rem 0 2.4rem; }
       .footer-row {
         flex-direction: row;
         justify-content: space-between;
@@ -945,20 +834,15 @@
 </head>
 <body>
 
-  <!-- HEADER / NAV -->
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="nav">
         <div class="nav-left">
-          <div class="logo-circle">
-            <!-- Replace text with <img src="images/logo.png" alt="Prime Wheels logo"> if you upload a logo -->
-            <span>PW</span>
-          </div>
+          <img src="images/primewheels-logo.png" alt="Prime Wheels logo" class="logo-img">
           <div>
             <div class="nav-title">Prime Wheels</div>
-            <div style="font-size:0.7rem;color:#9ca3af;letter-spacing:0.16em;text-transform:uppercase;">
-              Always On Time • Always Prime
-            </div>
+            <div class="nav-subtitle">Always On Time, Always Prime</div>
           </div>
         </div>
 
@@ -995,7 +879,6 @@
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <!-- MAIN SIDE -->
           <div class="hero-main fade-in">
             <div class="hero-chip-row">
               <div class="chip">
@@ -1003,22 +886,21 @@
                 <span>Umm Al Quwain • UAE</span>
               </div>
               <div class="chip">
-                <span>Private Hire • Lexus &amp; Camry</span>
+                <span>Taxi &amp; Private Hire Service</span>
               </div>
             </div>
 
             <h1 class="hero-title">
-              Luxury private hire in <span>Umm Al Quwain</span>
+              Luxury taxi in <span>Umm Al Quwain</span>
             </h1>
             <p class="hero-sub">
-              Ride in comfort with our <strong>Lexus LS430 (2001)</strong> and
-              <strong>Toyota Camry V6 (2004)</strong>, both in clean silver.
-              On-time pick-ups, smooth highway drives, and fair pricing —
-              <strong>Always On Time, Always Prime.</strong>
+              Ride in comfort with our <strong>Lexus LS430 (2001, silver)</strong> and
+              <strong>Toyota Camry V6 (2004, silver)</strong>. Clean cars, smooth driving and
+              honest fares for every trip — <strong>Always On Time, Always Prime.</strong>
             </p>
 
             <div class="hero-cta-row">
-              <a href="https://wa.me/971501140447?text=Hi%20Prime%20Wheels%2C%20I%27d%20like%20to%20book%20a%20ride."
+              <a href="https://wa.me/971501140447?text=Hi%20Prime%20Wheels%2C%20I%27d%20like%20to%20book%20a%20taxi%20from..."
                  class="btn btn-primary">
                 Book on WhatsApp
               </a>
@@ -1026,36 +908,39 @@
             </div>
 
             <div class="hero-mini">
-              <span><span class="mini-dot"></span> 24/7 on request</span>
+              <span><span class="mini-dot"></span> Advance booking 24/7</span>
               <span>UAQ • Dubai • Sharjah • Ajman • RAK</span>
             </div>
 
             <div class="hero-car-card">
               <div class="hero-car-left">
                 <h3>Featured Fleet</h3>
-                <p>Lexus LS430 &amp; Toyota Camry V6 — full-option comfort, perfect for long trips.</p>
+                <p>Lexus LS430 &amp; Toyota Camry V6 — perfect for airport runs, Dubai/Sharjah trips and daily UAQ rides.</p>
                 <div class="hero-spec-row">
-                  <div class="hero-spec-pill">Leather interior</div>
-                  <div class="hero-spec-pill">Dual-zone A/C</div>
-                  <div class="hero-spec-pill">USB &amp; charging</div>
-                  <div class="hero-spec-pill">Spacious rear seats</div>
+                  <div class="hero-spec-pill">Chilled A/C</div>
+                  <div class="hero-spec-pill">Comfortable leather seats</div>
+                  <div class="hero-spec-pill">Phone charging</div>
+                  <div class="hero-spec-pill">Calm, safe driving</div>
                 </div>
               </div>
               <div class="hero-car-right">
-                <div class="car-silhouette">
-                  <div class="car-glow"></div>
+                <div class="hero-car-slider">
+                  <img id="heroCarImage" src="images/lexus-ls430-silver.jpg" alt="Lexus LS430 Silver - Prime Wheels">
+                  <div class="hero-car-caption" id="heroCarCaption">
+                    Lexus LS430 • 2001 • Silver • VIP comfort
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SIDE CARD -->
+          <!-- Side card -->
           <div class="fade-in" style="animation-delay:0.15s;">
             <div class="card">
               <div class="card-inner">
                 <div class="badge-soft">Instant Fare Snapshot</div>
                 <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.4rem;">
-                  Prime Wheels standard rate inside &amp; outside Umm Al Quwain.
+                  Prime Wheels standard taxi rate in Umm Al Quwain and across the UAE.
                 </p>
                 <table class="fare-table">
                   <thead>
@@ -1066,27 +951,26 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Per km</td>
+                      <td>Per km (any car)</td>
                       <td class="fare-highlight">AED 1.10</td>
                     </tr>
                     <tr>
                       <td>Waiting time</td>
-                      <td>AED 40 / hour</td>
+                      <td>AED 40 / hour (first 10 min free)</td>
                     </tr>
                     <tr>
                       <td>Minimum city trip</td>
-                      <td>AED 20 (short rides)</td>
+                      <td>AED 20 inside UAQ</td>
                     </tr>
                   </tbody>
                 </table>
                 <p class="fare-note">
-                  Airport &amp; long-distance trips have fixed package prices. You will
-                  always know the fare before you travel.
+                  Airport &amp; long-distance rides are usually fixed price. We confirm your fare on WhatsApp before the journey starts.
                 </p>
                 <div class="fare-chip-row">
-                  <div class="fare-chip">No sharing – private car only</div>
-                  <div class="fare-chip">Clean &amp; well-maintained vehicles</div>
-                  <div class="fare-chip">Professional, calm driving</div>
+                  <div class="fare-chip">Private ride only (no sharing)</div>
+                  <div class="fare-chip">Clean &amp; well-maintained cars</div>
+                  <div class="fare-chip">Professional, relaxed driving</div>
                 </div>
               </div>
             </div>
@@ -1102,7 +986,7 @@
           <div>
             <h2 class="section-title">Our Fleet</h2>
             <p class="section-tagline">
-              Choose the car that matches your trip. Tap to highlight a vehicle.
+              Choose the car that fits your trip. Select a vehicle and it will be added to your WhatsApp booking.
             </p>
           </div>
         </div>
@@ -1114,11 +998,11 @@
               <div class="card-label">Luxury Sedan</div>
               <div class="card-title-row">
                 <h3 class="card-title">Lexus LS430 • 2001 • Silver</h3>
-                <span class="card-badge">Best for VIP &amp; long trips</span>
+                <span class="card-badge">VIP &amp; long trips</span>
               </div>
               <p class="card-sub">
-                Flagship Lexus comfort with soft suspension and quiet cabin –
-                ideal for airport transfers and Dubai / Abu Dhabi drives.
+                Flagship Lexus comfort with soft suspension and quiet cabin – ideal for airport transfers,
+                long Dubai or Abu Dhabi drives, and VIP guests.
               </p>
               <div class="spec-grid">
                 <div>
@@ -1131,19 +1015,19 @@
                 </div>
                 <div>
                   <div class="spec-label">Features</div>
-                  <div class="spec-value">Leather, rear A/C vents, smooth ride</div>
+                  <div class="spec-value">Leather seats, rear A/C, smooth ride</div>
                 </div>
                 <div>
-                  <div class="spec-label">Best For</div>
-                  <div class="spec-value">Families, office runs, late-night trips</div>
+                  <div class="spec-label">Best for</div>
+                  <div class="spec-value">Airport runs, late-night rides, business trips</div>
                 </div>
               </div>
               <div class="fleet-footer">
-                <button class="fleet-select" data-car="Lexus LS430">
+                <button class="fleet-select" data-car="Lexus LS430" data-img="images/lexus-ls430-silver.jpg" data-caption="Lexus LS430 • 2001 • Silver • VIP comfort">
                   <span class="fleet-select-dot"></span>
                   <span>Select Lexus</span>
                 </button>
-                <span>Recommended for longer highway journeys.</span>
+                <span>Maximum comfort and quiet cabin.</span>
               </div>
             </div>
           </article>
@@ -1157,8 +1041,8 @@
                 <span class="card-badge">Daily &amp; City Favourite</span>
               </div>
               <p class="card-sub">
-                Reliable Toyota comfort with strong A/C – perfect for city
-                rides, short hops, and regular Dubai / Sharjah trips.
+                Reliable Toyota comfort with strong A/C – perfect for daily UAQ taxi rides,
+                office runs, school runs and Dubai/Sharjah trips.
               </p>
               <div class="spec-grid">
                 <div>
@@ -1171,26 +1055,26 @@
                 </div>
                 <div>
                   <div class="spec-label">Features</div>
-                  <div class="spec-value">Strong A/C, smooth V6 power</div>
+                  <div class="spec-value">Strong A/C, smooth V6 engine</div>
                 </div>
                 <div>
-                  <div class="spec-label">Best For</div>
-                  <div class="spec-value">School runs, office, shopping</div>
+                  <div class="spec-label">Best for</div>
+                  <div class="spec-value">City trips, shopping, family rides</div>
                 </div>
               </div>
               <div class="fleet-footer">
-                <button class="fleet-select" data-car="Toyota Camry V6">
+                <button class="fleet-select" data-car="Toyota Camry V6" data-img="images/toyota-camry-v6-silver.jpg" data-caption="Toyota Camry V6 • 2004 • Silver • Everyday comfort">
                   <span class="fleet-select-dot"></span>
                   <span>Select Camry</span>
                 </button>
-                <span>Affordable comfort for everyday use.</span>
+                <span>Comfortable and economical for daily use.</span>
               </div>
             </div>
           </article>
         </div>
 
         <p class="fleet-selected-copy" id="fleetSelectedCopy">
-          Selected car: <span>None yet</span>. Tap a button above to choose your car – it will be included automatically in your WhatsApp booking message.
+          Selected car: <span>Any available</span>. Tap a button above to choose your car – it will be included automatically in your WhatsApp booking message.
         </p>
       </div>
     </section>
@@ -1201,7 +1085,7 @@
         <div class="section-heading">
           <div>
             <h2 class="section-title">Fares &amp; Packages</h2>
-            <p class="section-tagline">Simple and transparent pricing – no surprises at the end of the trip.</p>
+            <p class="section-tagline">Simple, transparent pricing – you know the taxi fare before we start driving.</p>
           </div>
         </div>
 
@@ -1209,7 +1093,7 @@
           <!-- Standard fares -->
           <div class="card fade-in">
             <div class="card-inner">
-              <div class="badge-soft">Standard Meter</div>
+              <div class="badge-soft">Standard Taxi Rate (Prime Wheels)</div>
               <table class="fare-table">
                 <thead>
                   <tr>
@@ -1224,21 +1108,21 @@
                   </tr>
                   <tr>
                     <td>Waiting time</td>
-                    <td>AED 40 per hour (first 10 min free)</td>
+                    <td>AED 40 per hour (first 10 minutes free)</td>
                   </tr>
                   <tr>
                     <td>Minimum short trip</td>
-                    <td>AED 20 (inside UAQ)</td>
+                    <td>AED 20 inside Umm Al Quwain</td>
                   </tr>
                   <tr>
                     <td>Night trips</td>
-                    <td>Same base rate – no hidden night surcharge</td>
+                    <td>No extra night charges – same rate 24/7</td>
                   </tr>
                 </tbody>
               </table>
               <p class="fare-note">
-                Final price depends on distance and waiting time. For long routes and airport runs we agree
-                a fixed fare with you before the trip starts.
+                Final taxi fare depends on distance and waiting time. For long UAE routes and airport runs,
+                we prefer a fixed price so you are relaxed and know the total amount from the beginning.
               </p>
             </div>
           </div>
@@ -1246,7 +1130,7 @@
           <!-- Airport & long distance -->
           <div class="card fade-in" style="animation-delay:0.1s;">
             <div class="card-inner">
-              <div class="badge-soft">Airport &amp; City Packages</div>
+              <div class="badge-soft">Popular Routes &amp; Airport Packages</div>
               <table class="fare-table">
                 <thead>
                   <tr>
@@ -1278,8 +1162,8 @@
                 </tbody>
               </table>
               <p class="fare-note">
-                Above prices are typical examples. Exact fare is confirmed on WhatsApp before your ride,
-                depending on your pickup point, drop point and time of day.
+                These are sample prices for normal traffic. Send your pickup and drop location on WhatsApp and we
+                will confirm the exact taxi fare before you book.
               </p>
             </div>
           </div>
@@ -1293,7 +1177,7 @@
         <div class="section-heading">
           <div>
             <h2 class="section-title">Why Prime Wheels</h2>
-            <p class="section-tagline">Small team. Personal service. You deal directly with the driver.</p>
+            <p class="section-tagline">Small team, personal service — you always deal directly with the driver.</p>
           </div>
         </div>
 
@@ -1302,24 +1186,25 @@
             <div class="card-inner">
               <h3 style="font-size:0.92rem;margin-bottom:0.25rem;">Always On Time</h3>
               <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">
-                We plan extra time for traffic and fuel so you don’t wait at the building gate or airport.
+                We respect your time. For airport and long-distance bookings we plan extra time so you are never left waiting at the gate.
               </p>
               <div class="pill-row">
-                <div class="pill">Live ETA updates</div>
-                <div class="pill">Pickup reminder</div>
+                <div class="pill">Pickup reminders</div>
+                <div class="pill">Live ETA on WhatsApp</div>
               </div>
             </div>
           </div>
 
           <div class="card fade-in" style="animation-delay:0.05s;">
             <div class="card-inner">
-              <h3 style="font-size:0.92rem;margin-bottom:0.25rem;">Clean &amp; Comfortable</h3>
+              <h3 style="font-size:0.92rem;margin-bottom:0.25rem;">Clean &amp; Comfortable Cars</h3>
               <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">
-                Cars are washed regularly, A/C maintained and driven smoothly – no harsh braking or racing.
+                We keep our Lexus and Camry neat, smoke-free and well-maintained. A/C is strong and the ride is smooth –
+                perfect for families, kids and elderly passengers.
               </p>
               <div class="pill-row">
-                <div class="pill">Water on request</div>
-                <div class="pill">Quiet, relaxed ride</div>
+                <div class="pill">Regular cleaning</div>
+                <div class="pill">Gentle driving style</div>
               </div>
             </div>
           </div>
@@ -1328,11 +1213,11 @@
             <div class="card-inner">
               <h3 style="font-size:0.92rem;margin-bottom:0.25rem;">Direct WhatsApp Support</h3>
               <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">
-                No call center – you message the driver directly and get quick confirmation and live updates.
+                No call center. You chat directly with the Prime Wheels driver to confirm your booking, share your location and ask for a fare.
               </p>
               <div class="pill-row">
-                <div class="pill">Share live location</div>
-                <div class="pill">Quick fare quotes</div>
+                <div class="pill">Instant quotes</div>
+                <div class="pill">Location sharing</div>
               </div>
             </div>
           </div>
@@ -1369,7 +1254,7 @@
                 <div class="form-row-2">
                   <div>
                     <label for="pickup">Pickup location</label>
-                    <input id="pickup" type="text" placeholder="Building / Area" required>
+                    <input id="pickup" type="text" placeholder="Building / Area in UAQ" required>
                   </div>
                   <div>
                     <label for="dropoff">Drop location</label>
@@ -1394,7 +1279,7 @@
 
                 <div>
                   <label for="notes">Extra notes</label>
-                  <textarea id="notes" placeholder="Flight number, luggage, child seat, etc."></textarea>
+                  <textarea id="notes" placeholder="Flight number, luggage, child seat, special request, etc."></textarea>
                 </div>
 
                 <div class="form-row-2" style="margin-top:0.3rem;align-items:center;">
@@ -1406,8 +1291,8 @@
               </form>
 
               <p class="booking-help">
-                The button will open WhatsApp with all ride details pre-typed. Just press
-                <strong>Send</strong> to confirm your booking with Prime Wheels.
+                The button will open WhatsApp with all taxi details pre-typed. Just press
+                <strong>Send</strong> to confirm your Prime Wheels booking.
               </p>
             </div>
           </div>
@@ -1416,7 +1301,7 @@
           <div class="maps-card fade-in" style="animation-delay:0.08s;">
             <h3>Share your location faster</h3>
             <p>
-              For accurate fares and easier pickup, you can drop a pin on Google Maps and send it on WhatsApp.
+              For accurate taxi fares and easy pickup, drop a pin on Google Maps and send it on WhatsApp.
             </p>
             <div class="maps-links">
               <a class="maps-link"
@@ -1447,7 +1332,7 @@
     <div class="container">
       <div class="footer-row">
         <div class="footer-main">
-          <span><strong>Prime Wheels</strong> • Private Hire Service</span>
+          <span><strong>Prime Wheels</strong> • Taxi &amp; Private Hire Service</span>
           <span>Umm Al Quwain • United Arab Emirates</span>
           <span>Phone / WhatsApp: <strong>+971 50 114 0447</strong></span>
         </div>
@@ -1491,12 +1376,14 @@
     );
     fadeEls.forEach((el) => observer.observe(el));
 
-    // Fleet selection -> store for WhatsApp
+    // Fleet selection -> update selected car + hero slider
     let selectedCar = "";
+    const heroImg = document.getElementById("heroCarImage");
+    const heroCaption = document.getElementById("heroCarCaption");
 
     function updateSelectedCopy() {
       const copyEl = document.getElementById("fleetSelectedCopy");
-      copyEl.querySelector("span").textContent = selectedCar || "None yet";
+      copyEl.querySelector("span").textContent = selectedCar || "Any available";
     }
 
     document.querySelectorAll(".fleet-select").forEach((btn) => {
@@ -1504,10 +1391,15 @@
         document.querySelectorAll(".fleet-select").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         selectedCar = btn.getAttribute("data-car") || "";
+
+        const img = btn.getAttribute("data-img");
+        const caption = btn.getAttribute("data-caption");
+        if (img && heroImg) heroImg.src = img;
+        if (caption && heroCaption) heroCaption.textContent = caption;
+
         const carSelect = document.getElementById("car");
-        if (carSelect && selectedCar) {
-          carSelect.value = selectedCar;
-        }
+        if (carSelect) carSelect.value = selectedCar || "";
+
         updateSelectedCopy();
       });
     });
@@ -1528,7 +1420,7 @@
       const car = document.getElementById("car").value;
       const notes = document.getElementById("notes").value.trim();
 
-      let message = "Hi Prime Wheels,%0A%0AI would like to book a ride.%0A%0A";
+      let message = "Hi Prime Wheels,%0A%0AI would like to book a taxi.%0A%0A";
       message += "Name: " + (name || "N/A") + "%0A";
       message += "Passengers: " + (passengers || "1") + "%0A";
       message += "Pickup: " + (pickup || "N/A") + "%0A";
@@ -1554,7 +1446,3 @@
   </script>
 </body>
 </html>
-
-
-
-
