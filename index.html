@@ -17,13 +17,13 @@
   <!-- CANONICAL -->
   <link rel="canonical" href="https://primewheels.github.io/PrimeWheels/">
 
-  <!-- FAVICON (optional, uses logo) -->
-  <link rel="icon" type="image/png" href="images/primewheels-logo.png">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/prime-wheels-logo.png">
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Prime Wheels — Private Hire | Umm Al Quwain UAE">
   <meta property="og:description" content="Safe and affordable private hire with Lexus LS430 & Toyota Camry V6. Airport pick-up, city rides, Dubai/Sharjah transfers. Book now via WhatsApp.">
-  <meta property="og:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png">
+  <meta property="og:image" content="https://primewheels.github.io/PrimeWheels/images/prime-wheels-logo.png">
   <meta property="og:url" content="https://primewheels.github.io/PrimeWheels/">
   <meta property="og:type" content="website">
 
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Prime Wheels — Private Hire UAQ">
   <meta name="twitter:description" content="Fast, clean, affordable taxi in Umm Al Quwain. Lexus LS430, Toyota Camry V6. WhatsApp booking available.">
-  <meta name="twitter:image" content="https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png">
+  <meta name="twitter:image" content="https://primewheels.github.io/PrimeWheels/images/prime-wheels-logo.png">
 
   <!-- Language / Region -->
   <link rel="alternate" href="https://primewheels.github.io/PrimeWheels/" hreflang="en-ae" />
@@ -42,7 +42,7 @@
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Prime Wheels",
-    "image": "https://primewheels.github.io/PrimeWheels/images/primewheels-logo.png",
+    "image": "https://primewheels.github.io/PrimeWheels/images/prime-wheels-logo.png",
     "@id": "https://primewheels.github.io/PrimeWheels/",
     "url": "https://primewheels.github.io/PrimeWheels/",
     "telephone": "+971501140447",
@@ -64,8 +64,14 @@
       "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Standard per km",
+          "name": "Camry per km",
           "price": "1.10",
+          "priceCurrency": "AED"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lexus per km",
+          "price": "1.43",
           "priceCurrency": "AED"
         },
         {
@@ -95,10 +101,10 @@
     },
     {
      "@type": "Question",
-     "name": "How much is the per kilometer rate?",
+     "name": "What are your per kilometer rates?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Our standard rate is AED 1.10 per km with AED 40 per hour waiting time. You will always know the fare before the trip starts."
+      "text": "Our standard Camry rate is AED 1.10 per km. Lexus LS430 is around 30% higher at AED 1.43 per km. Waiting time is AED 40 per hour for both cars."
      }
     },
     {
@@ -175,7 +181,9 @@
     .logo-img {
       width: 60px;
       height: 60px;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid rgba(248, 250, 252, 0.25);
     }
 
     .nav-title {
@@ -601,7 +609,7 @@
 
     .fares-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 1rem;
     }
 
@@ -644,6 +652,54 @@
       background: rgba(15, 23, 42, 0.9);
     }
 
+    .calculator-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    .calc-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .calc-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.08rem;
+      display: block;
+    }
+
+    .calc-input,
+    .calc-select {
+      width: 100%;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.94);
+      color: var(--text);
+      padding: 0.35rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    .calc-input:focus,
+    .calc-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.45);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .calc-result {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .calc-result strong { color: #f9fafb; }
+
     /* WHY US */
 
     .why-grid {
@@ -664,6 +720,44 @@
       padding: 0.16rem 0.6rem;
       border: 1px solid rgba(75, 85, 99, 0.9);
       background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* REVIEWS */
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.9rem;
+    }
+
+    .stars {
+      color: #facc15;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .review-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 0.35rem;
+    }
+
+    .review-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .rating-badge {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.12);
+      border: 1px solid rgba(22, 163, 74, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #bbf7d0;
     }
 
     /* BOOKING */
@@ -811,10 +905,15 @@
     @media (min-width: 640px) {
       .hero { padding-top: 2rem; }
       .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr); }
-      .fares-layout { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); }
+      .fares-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .booking-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr); }
       .fleet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 900px) {
+      .fares-layout { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (min-width: 768px) {
@@ -851,6 +950,7 @@
           <a href="#fleet">Fleet</a>
           <a href="#fares">Fares</a>
           <a href="#why">Why Us</a>
+          <a href="#reviews">Reviews</a>
           <a href="#booking">Booking</a>
         </nav>
 
@@ -869,6 +969,7 @@
         <a href="#fleet">Fleet</a>
         <a href="#fares">Fares</a>
         <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
         <a href="#booking">Booking</a>
       </nav>
     </div>
@@ -897,6 +998,7 @@
               Ride in comfort with our <strong>Lexus LS430 (2001, silver)</strong> and
               <strong>Toyota Camry V6 (2004, silver)</strong>. Clean cars, smooth driving and
               honest fares for every trip — <strong>Always On Time, Always Prime.</strong>
+              Camry from <strong>AED 1.10/km</strong>, Lexus from <strong>AED 1.43/km</strong>.
             </p>
 
             <div class="hero-cta-row">
@@ -925,7 +1027,7 @@
               </div>
               <div class="hero-car-right">
                 <div class="hero-car-slider">
-                  <img id="heroCarImage" src="images/lexus-ls430-silver.jpg" alt="Lexus LS430 Silver - Prime Wheels">
+                  <img id="heroCarImage" src="images/lexus-ls430-2001-silver.png" alt="Lexus LS430 Silver - Prime Wheels">
                   <div class="hero-car-caption" id="heroCarCaption">
                     Lexus LS430 • 2001 • Silver • VIP comfort
                   </div>
@@ -940,7 +1042,7 @@
               <div class="card-inner">
                 <div class="badge-soft">Instant Fare Snapshot</div>
                 <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.4rem;">
-                  Prime Wheels standard taxi rate in Umm Al Quwain and across the UAE.
+                  Prime Wheels standard taxi rates in Umm Al Quwain and across the UAE.
                 </p>
                 <table class="fare-table">
                   <thead>
@@ -951,8 +1053,12 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Per km (any car)</td>
+                      <td>Camry per km</td>
                       <td class="fare-highlight">AED 1.10</td>
+                    </tr>
+                    <tr>
+                      <td>Lexus per km</td>
+                      <td class="fare-highlight">AED 1.43 (about 30% extra)</td>
                     </tr>
                     <tr>
                       <td>Waiting time</td>
@@ -1023,14 +1129,11 @@
                 </div>
               </div>
               <div class="fleet-footer">
-                <button class="fleet-select" 
-                  data-car="Lexus LS430"
-                  data-img="images/lexus-ls430-2001-silver.png"
-                  data-caption="Lexus LS430 • 2001 • Silver • VIP comfort">
-                    <span class="fleet-select-dot"></span>
-                    <span>Select Lexus</span>
+                <button class="fleet-select" data-car="Lexus LS430" data-img="images/lexus-ls430-2001-silver.png" data-caption="Lexus LS430 • 2001 • Silver • VIP comfort">
+                  <span class="fleet-select-dot"></span>
+                  <span>Select Lexus</span>
                 </button>
-                    <span>Maximum comfort and quiet cabin.</span>
+                <span>Maximum comfort and quiet cabin.</span>
               </div>
             </div>
           </article>
@@ -1066,14 +1169,11 @@
                 </div>
               </div>
               <div class="fleet-footer">
-                <button class="fleet-select" 
-                  data-car="Toyota Camry V6"
-                  data-img="images/camry-v6-2004-silver.png"
-                  data-caption="Toyota Camry V6 • 2004 • Silver • Everyday comfort">
-                    <span class="fleet-select-dot"></span>
-                    <span>Select Camry</span>
+                <button class="fleet-select" data-car="Toyota Camry V6" data-img="images/camry-v6-2004-silver.png" data-caption="Toyota Camry V6 • 2004 • Silver • Everyday comfort">
+                  <span class="fleet-select-dot"></span>
+                  <span>Select Camry</span>
                 </button>
-                    <span>Comfortable and economical for daily use.</span>
+                <span>Comfortable and economical for daily use.</span>
               </div>
             </div>
           </article>
@@ -1109,11 +1209,15 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Per kilometer</td>
+                    <td>Camry per kilometer</td>
                     <td class="fare-highlight">AED 1.10 / km</td>
                   </tr>
                   <tr>
-                    <td>Waiting time</td>
+                    <td>Lexus per kilometer</td>
+                    <td class="fare-highlight">AED 1.43 / km (≈30% more)</td>
+                  </tr>
+                  <tr>
+                    <td>Waiting time (any car)</td>
                     <td>AED 40 per hour (first 10 minutes free)</td>
                   </tr>
                   <tr>
@@ -1173,6 +1277,42 @@
               </p>
             </div>
           </div>
+
+          <!-- Fare Calculator -->
+          <div class="card fade-in" style="animation-delay:0.15s;">
+            <div class="card-inner">
+              <div class="badge-soft">Fare Calculator (Estimate)</div>
+              <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">
+                Get an approximate fare for your trip. Final price will be confirmed on WhatsApp.
+              </p>
+              <form class="calculator-form" id="fareCalculator">
+                <div class="calc-row-2">
+                  <div>
+                    <label class="calc-label" for="calcDistance">Distance (km)</label>
+                    <input id="calcDistance" type="number" step="0.1" min="1" class="calc-input" placeholder="Example: 25" required>
+                  </div>
+                  <div>
+                    <label class="calc-label" for="calcWaiting">Waiting (minutes)</label>
+                    <input id="calcWaiting" type="number" step="1" min="0" class="calc-input" placeholder="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="calc-label" for="calcCar">Car</label>
+                  <select id="calcCar" class="calc-select">
+                    <option value="camry">Toyota Camry V6 (AED 1.10/km)</option>
+                    <option value="lexus">Lexus LS430 (AED 1.43/km)</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top:0.25rem;">Calculate Fare</button>
+              </form>
+              <div class="calc-result" id="calcResult">
+                Enter distance and (optional) waiting time, then tap "Calculate Fare".
+              </div>
+              <p class="fare-note" style="margin-top:0.4rem;">
+                * Minimum fare inside Umm Al Quwain is usually AED 20. Tolls and parking (if any) are extra.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1215,7 +1355,7 @@
             </div>
           </div>
 
-          <div class="card fade-in" style="animation-delay:0.1s;">
+          <div class="card fade-in" style="animation-delay:0.1s%;">
             <div class="card-inner">
               <h3 style="font-size:0.92rem;margin-bottom:0.25rem;">Direct WhatsApp Support</h3>
               <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">
@@ -1225,6 +1365,60 @@
                 <div class="pill">Instant quotes</div>
                 <div class="pill">Location sharing</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Customer Reviews</h2>
+            <p class="section-tagline">Rated highly by regular riders in Umm Al Quwain.</p>
+          </div>
+          <div class="rating-badge">
+            <span>⭐ 4.9 / 5</span>
+            <span style="font-size:0.7rem;">(Based on rider feedback)</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="card fade-in">
+            <div class="card-inner">
+              <div class="stars">★★★★★</div>
+              <p style="font-size:0.8rem;color:var(--muted);">
+                "Driver arrived early, car was very clean and the A/C was perfect. I used Prime Wheels for a late night
+                airport drop to Dubai – super smooth and safe ride."
+              </p>
+              <div class="review-name">Ahmed • UAQ to DXB Airport</div>
+              <div class="review-tag">Lexus LS430</div>
+            </div>
+          </div>
+
+          <div class="card fade-in" style="animation-delay:0.05s;">
+            <div class="card-inner">
+              <div class="stars">★★★★★</div>
+              <p style="font-size:0.8rem;color:var(--muted);">
+                "I use the Camry for my daily office trips. Easy to book on WhatsApp, fare is always fair and the driver is
+                polite. My family also feels comfortable."
+              </p>
+              <div class="review-name">Sameera • UAQ City Rides</div>
+              <div class="review-tag">Toyota Camry V6</div>
+            </div>
+          </div>
+
+          <div class="card fade-in" style="animation-delay:0.1s;">
+            <div class="card-inner">
+              <div class="stars">★★★★☆</div>
+              <p style="font-size:0.8rem;color:var(--muted);">
+                "Booked for my parents from UAQ to Sharjah. Driver drove calmly, helped with luggage and updated me on WhatsApp
+                during the trip. Very trustworthy service."
+              </p>
+              <div class="review-name">Nimal • UAQ to Sharjah</div>
+              <div class="review-tag">Lexus &amp; Camry</div>
             </div>
           </div>
         </div>
@@ -1448,6 +1642,45 @@
 
       const url = "https://wa.me/971501140447?text=" + message;
       window.open(url, "_blank");
+    });
+
+    // Fare calculator
+    const fareForm = document.getElementById("fareCalculator");
+    const calcResult = document.getElementById("calcResult");
+
+    const RATE_CAMRY = 1.10;
+    const RATE_LEXUS = 1.43;
+    const WAITING_PER_HOUR = 40; // same for both cars
+
+    fareForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const distance = parseFloat(document.getElementById("calcDistance").value);
+      const waitingMinutes = parseFloat(document.getElementById("calcWaiting").value || "0");
+      const car = document.getElementById("calcCar").value;
+
+      if (!distance || distance <= 0) {
+        calcResult.textContent = "Please enter a valid distance in kilometers.";
+        return;
+      }
+
+      const perKm = car === "lexus" ? RATE_LEXUS : RATE_CAMRY;
+      const distanceCost = distance * perKm;
+      const waitingCost = (waitingMinutes / 60) * WAITING_PER_HOUR;
+      let total = distanceCost + waitingCost;
+
+      // Round to 0.5 AED for a clean number
+      total = Math.round(total * 2) / 2;
+
+      const carName = car === "lexus" ? "Lexus LS430" : "Toyota Camry V6";
+
+      calcResult.innerHTML =
+        "Estimated fare for <strong>" + carName + "</strong>:<br>" +
+        "• Distance cost: <strong>AED " + distanceCost.toFixed(2) + "</strong><br>" +
+        "• Waiting cost: <strong>AED " + waitingCost.toFixed(2) + "</strong><br>" +
+        "----------------------------------------<br>" +
+        "Total estimated fare: <strong>AED " + total.toFixed(2) + "</strong><br>" +
+        "<span style='font-size:0.72rem;color:#9ca3af;'>This is an estimate. Final price will be confirmed on WhatsApp based on exact route, traffic and minimum fare rules.</span>";
     });
   </script>
 </body>
